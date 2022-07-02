@@ -1,13 +1,42 @@
+<div class="container bg-transparent">
 
-        <h1>
+        
+        <h1 class="text-center">
             Codeial / <%= title %>
         </h1>
-        
-        <section id="feed-posts">
-            <h4>Posts</h4>
-            <form action="" id="new-post-form ">
-                <textarea name="content" id="" cols="30" rows="10"></textarea>
-                <input type="submit" value="Post">
+        <%- include("feed_post") -%>
+         
+        <div>
+            <h1 class="h3 text-danger">Recently posted</h1>
 
-            </form>
-        </section>
+           <div class="post-items row">
+
+                <% for(post of posts){ %>
+                
+                <div class="col-lg-4 col-md-6 col-sm-12 border card ">
+
+                    <div class="post card-body h-lg-50 h-sm-100">
+                            <div class="post-content card-text h-lg-50 overflow-hidden" style="width: 18rem;">
+                                <p><%= post.content %> </p>
+                                <% if((locals.user) && (post.user.name==user.name)){  %>
+                                      <p class="author text-secondary text-end">written by You</p>
+                               <% } else{ %>
+                                
+                                <p class="author text-secondary text-end">written by <%= post.user.name %></p>
+                                <% } %>
+                            </div>
+                            <!-- include partial -->
+                           <%- include("post_comments") -%>
+                            <%- include("delete_post") -%>
+                           
+                    </div>          
+                </div>
+                <% } %>
+
+                   
+            </div>  
+        </div> 
+
+
+                 
+        </div>

@@ -15,13 +15,14 @@
   "dependencies": {
     "connect-mongo": "^2.0.3",
     "cookie-parser": "^1.4.4",
-    "ejs": "^2.6.1",
+    "ejs": "^2.7.4",
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.15.6",
     "mongodb": "^4.7.0",
     "mongoose": "^5.4.6",
     "node-sass-middleware": "^1.0.1",
+    "nodemon": "^2.0.18",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
   }

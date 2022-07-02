@@ -1,26 +1,31 @@
-<header>
-    Page Header
-
-    <ul>
+<header class="row bg-secondary text-dark  w-100">
+    
+    <h1 class="col-lg-4 vertical-align-center text-light">Codial</h1>
+    <ul class="list-unstyled navigation col-lg-7 d-flex  justify-content-end pe-4  align-content-center vertical-align-center " >
         <% if (locals.user){ %>
-            <li>
-                <a href="/users/profile">
-                    <%= user.name %>
+            <li class="ms-4 mt-2 " >
+                <a href="/users/profile" style="text-decoration:none;">
+                    <h4 class="text-light"><%= user.name %></h4>
                 </a>
             </li>
-            <li>
-                <a href="/users/sign-out">Sign Out</a>
+            <li class="ms-4 mt-2" >
+                <a href="/users/sign-out" style="text-decoration:none;">
+                <h4 class="text-light">Sign Out
+                    </h4>
+                 </a>
             </li>
         <% }else{ %>
 
-            <li>
-                <a href="/users/sign-in">Sign In</a>
+            <li class="ms-4 mt-2 " >
+                <a href="/users/sign-in" style="text-decoration:none;">
+                <h4 class="text-light">Sign In
+            </h4></a>
             </li>
 
-            <li>
-                <a href="/users/sign-up">Sign Up</a>
+            <li class="ms-4 mt-2 text-light" >
+                <a href="/users/sign-up" style="text-decoration:none;"><h4 class="text-light">Sign Up</h4></a>
             </li>
-
+ 
 
         <% } %>
     </ul>

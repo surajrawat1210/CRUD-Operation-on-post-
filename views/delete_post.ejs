@@ -1,0 +1,9 @@
+<div class="delete-post">
+    <% if ((locals.user) && (locals.user.id == post.user.id)){ %>
+    <form action="/posts/destroy/<%= post._id %> " method="POST">
+        <!-- <input type="submit" value="delete"> -->
+        <button class="position-absolute top-0 end-0 bg-danger border-danger text-light" type="submit" value="submit"> <i class="fa-solid fa-xmark"></i></button>
+    
+    </form>
+    <% } %>
+</div>

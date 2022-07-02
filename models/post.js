@@ -1,4 +1,4 @@
-const { Timestamp } = require("mongodb");
+
 const mongoose=require("mongoose");
 const postSchema=new mongoose.Schema({
     content:{
@@ -8,11 +8,17 @@ const postSchema=new mongoose.Schema({
     user:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"User",
-    }
-
+    },
+    //include the array o fids of all comments in the post Schema itself
+    comments:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Comment"
+        }
+    ]
     }
 ,{
     Timestamps:true
 });
-const Post =mongoose.model("Post",postSchema);
+const Post =mongoose.model("Posts",postSchema);
 module.exports=Post;

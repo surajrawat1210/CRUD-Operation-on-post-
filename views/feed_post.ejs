@@ -1,0 +1,13 @@
+<section id="feed-posts">
+    <h4 class="heading ">Posts</h4>
+    <% if(locals.user){ %>
+    <form class="form" action="/posts/create" id="new-post-form " method="POST">
+        <div class="form-floating">
+        <textarea class="form-control" name="content" id="" placeholder="white here" cols="30" rows="10" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">post here</label>
+          </div>
+        <input type="submit" class=" btn-secondary btn-lg  my-3" value="Post" style="width:200px;">
+
+    </form>
+  <% }  %>
+</section>
